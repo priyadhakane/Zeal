@@ -55,41 +55,40 @@
                             <img src="{% static 'img/zeal_logo.png' %}" alt="" style="width: 10em;">
                             <h3>Sign In</h3>
                         </div>
-
-                        <!-- Role Selection Radio Buttons -->
-                        <div class="mb-3">
-                            <label class="form-label">Select Role:</label>
-                            <div class="form-check">
-                                <input class="form-check-input" type="radio" name="role" id="student" value="student">
-                                <label class="form-check-label" for="student">Student</label>
+                        <form action="/signin" method="post">
+                            {% csrf_token %}
+                            
+                            <!-- Role Selection Radio Buttons -->
+                            <div class="mb-3">
+                                <label class="form-label">Select Role:</label>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="role" id="student" value="student">
+                                    <label class="form-check-label" for="student">Student</label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="role" id="staff" value="staff">
+                                    <label class="form-check-label" for="staff">Staff</label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="role" id="admin" value="admin">
+                                    <label class="form-check-label" for="admin">Admin</label>
+                                </div>
                             </div>
-                            <div class="form-check">
-                                <input class="form-check-input" type="radio" name="role" id="staff" value="staff">
-                                <label class="form-check-label" for="staff">Staff</label>
+                            
+                            <div class="form-floating mb-3">
+                                <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com" name="email">
+                                <label for="floatingInput">Email address</label>
                             </div>
-                            <div class="form-check">
-                                <input class="form-check-input" type="radio" name="role" id="admin" value="admin">
-                                <label class="form-check-label" for="admin">Admin</label>
+                            <div class="form-floating mb-4">
+                                <input type="password" class="form-control" id="floatingPassword" placeholder="Password" name="password">
+                                <label for="floatingPassword">Password</label>
                             </div>
-                        </div>
-                        
-                        <div class="form-floating mb-3">
-                            <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com">
-                            <label for="floatingInput">Email address</label>
-                        </div>
-                        <div class="form-floating mb-4">
-                            <input type="password" class="form-control" id="floatingPassword" placeholder="Password">
-                            <label for="floatingPassword">Password</label>
-                        </div>
-                        <div class="d-flex align-items-center justify-content-between mb-4">
-                            <div class="form-check">
-                                <input type="checkbox" class="form-check-input" id="exampleCheck1">
-                                <label class="form-check-label" for="exampleCheck1">Check me out</label>
+                            <div class="d-flex align-items-center justify-content-between mb-4">
+                                <a href="">Forgot Password</a>
                             </div>
-                            <a href="">Forgot Password</a>
-                        </div>
-                        <button type="submit" class="btn btn-primary py-3 w-100 mb-4">Sign In</button>
-                        <p class="text-center mb-0">Don't have an Account? <a href="">Sign Up</a></p>
+                            <button type="submit" class="btn btn-primary py-3 w-100 mb-4">Sign In</button>
+                        </form>
+                        {% comment %} <p class="text-center mb-0">Don't have an Account? <a href="">Sign Up</a></p> {% endcomment %}
                     </div>
                 </div>
             </div>
