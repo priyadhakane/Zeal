@@ -1,6 +1,6 @@
 from django.contrib import admin
 from django.contrib.auth.models import User
-from .models import ExtendedUser
+from .models import *
 from django.contrib.auth.admin import UserAdmin
 
 
@@ -15,3 +15,8 @@ class CustomizedUserAdmin(UserAdmin):
 
 admin.site.unregister(User)
 admin.site.register(User, CustomizedUserAdmin)
+admin.site.register(Student)
+admin.site.register(Division)
+admin.site.register(Course)
+admin.site.register(Admin)
+admin.site.register(Staff)
