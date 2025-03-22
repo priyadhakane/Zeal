@@ -91,7 +91,7 @@ DATABASES = {
         'NAME': "zealerp",
         'HOST': "localhost",
         'USER': "root",
-        'PASSWORD': "admin",
+        'PASSWORD': "1234",
         'PORT':"3306"
     }
 }
@@ -141,6 +141,9 @@ STATICFILES_DIRS =[
 
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR,'media')
+
+if not os.path.exists(os.path.join(MEDIA_ROOT, 'profiles')):
+    os.makedirs(os.path.join(MEDIA_ROOT, 'profiles'))
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.1/ref/settings/#default-auto-field
