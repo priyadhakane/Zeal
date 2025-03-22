@@ -15,8 +15,4 @@ class CustomizedUserAdmin(UserAdmin):
 
 admin.site.unregister(User)
 admin.site.register(User, CustomizedUserAdmin)
-admin.site.register(Student)
-admin.site.register(Division)
-admin.site.register(Course)
-admin.site.register(Admin)
-admin.site.register(Staff)
+# admin.site.register(Admin)

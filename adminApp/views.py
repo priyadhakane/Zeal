@@ -1,7 +1,7 @@
 from django.shortcuts import render, redirect
 from django.contrib.auth import authenticate, login, logout
 from .models import ExtendedUser
-
+from studentApp.models import Course
 
 
 # Create your views here.
@@ -35,4 +35,9 @@ def signin(request):
 
 
 def dashboard(request):
-    return render(request, 'base.html')
+    return render(request, 'adminApp/index.html')
+
+
+def courses(request):
+    courses = Course.objects.all()
+    return render(request, 'adminApp/manage_course.html', {'courses': courses})
