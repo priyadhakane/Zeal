@@ -1,5 +1,9 @@
 from django.shortcuts import render, redirect
 from django.contrib.auth import authenticate, login, logout
+from .models import ExtendedUser
+
+
+
 # Create your views here.
 def signin(request):
     if request.method == "POST":
@@ -9,14 +13,22 @@ def signin(request):
 
         user = authenticate( request,username=email, password=password)
         if user is not None:
-            if user.ExtendedUser.user_type == user_type:
+            ex_user = ExtendedUser.objects.get(user=user.id)
+            if ex_user.user_type == user_type:
                 print("User Type Correct!")
-            login(request, user)
-            print("User logged In", user)
-            return redirect('/')
+                # redirect to corresponding dashboard
+                if user_type == "admin":
+                    login(request, user)
+                    return redirect('/')
+                elif user_type == "student":
+                    login(request, user)
+                    return redirect('/student')
+                elif user_type == "staff":
+                    login(request, user)
+                    return redirect('/staff')
         else:
             print("Invalid Credentials!!")
-            return redirect('/auth')
+            return redirect('/signin')
         
     return render(request, 'signin.html')
 
