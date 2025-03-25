@@ -61,6 +61,23 @@
                 </div>
                 <div class="navbar-nav w-100">
                     <a href="index.html" class="nav-item nav-link active"><i class="fa fa-tachometer-alt me-2"></i>Dashboard</a>
+                    <li class="nav-item dropdown">
+                        <a href="/profile.html" class="nav-link dropdown-toggle active" id="profileDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            <i class="fa fa-user me-2"></i> My Profile
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="profileDropdown">
+                            {% if user.is_authenticated %}
+                                <li><a class="dropdown-item" href="{% url 'profile' %}"><i class="fa fa-user me-2"></i> View Profile</a></li>
+                                <li><a class="dropdown-item" href="{% url 'profile_update' %}"><i class="fa fa-edit me-2"></i> Edit Profile</a></li>
+                                <li><a class="dropdown-item" href="{% url 'change_password' %}"><i class="fa fa-lock me-2"></i> Change Password</a></li>
+                                <li><hr class="dropdown-divider"></li>
+                            {% else %}
+                                <li><a class="dropdown-item" href="{% url 'signin' %}"><i class="fa fa-sign-in-alt me-2"></i> Login</a></li>
+                            {% endif %}
+                        </ul>
+                    </li>
+                    
+
                     {% block sidenav %}{% endblock sidenav %}
                     
                 </div>

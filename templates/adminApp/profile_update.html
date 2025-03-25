@@ -1,0 +1,46 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block mainblock %}
+<h2>Update Profile</h2>
+
+<form method="post" enctype="multipart/form-data">
+    {% csrf_token %}
+    <table border="1">
+        <tr>
+            <th>Field</th>
+            <th>Input</th>
+        </tr>
+        <tr>
+            <td><label>First Name:</label></td>
+            <td><input type="text" name="first_name" value="{{ user_profile.user.first_name }}"></td>
+        </tr>
+        <tr>
+            <td><label>Last Name:</label></td>
+            <td><input type="text" name="last_name" value="{{ user_profile.user.last_name }}"></td>
+        </tr>
+        <tr>
+            <td><label>Email:</label></td>
+            <td><input type="email" name="email" value="{{ user_profile.user.email }}"></td>
+        </tr>
+        <tr>
+            <td><label>Phone:</label></td>
+            <td><input type="text" name="phone" value="{{ user_profile.phone }}"></td>
+        </tr>
+        <tr>
+            <td><label>Address:</label></td>
+            <td><textarea name="address">{{ user_profile.address }}</textarea></td>
+        </tr>
+        <tr>
+            <td><label>Profile Picture:</label></td>
+            <td><input type="file" name="profile_picture"></td>
+        </tr>
+        <tr>
+            <td colspan="2" style="text-align: center;">
+                <button type="submit">Update</button>
+                <a href="{% url 'profile' %}">Cancel</a>
+            </td>
+        </tr>
+    </table>
+</form>
+{% endblock mainblock %}

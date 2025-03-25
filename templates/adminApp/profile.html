@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block mainblock %}
+    <div>
+        {% if request.user.is_authenticated %}
+            <p><strong>Username:</strong> {{ request.user.username }}</p>
+            <p><strong>Email:</strong> {{ request.user.email }}</p>
+
+            {% if request.user.userprofile %}
+                <p><strong>Phone:</strong> {{ request.user.userprofile.phone|default:"Not Provided" }}</p>
+                <p><strong>Address:</strong> {{ request.user.userprofile.address|default:"No Address" }}</p>
+                <p><strong>Profile Picture:</strong></p>
+                {% if request.user.userprofile.profile_picture %}
+                    <img src="{{ request.user.userprofile.profile_picture.url }}" alt="Profile Picture" width="100">
+                {% else %}
+                    <p>No Profile Picture</p>
+                {% endif %}
+            {% else %}
+                <p>No profile information available.</p>
+            {% endif %}
+        {% else %}
+            <p>You are not logged in. Please log in to view your profile.</p>
+        {% endif %}
+    </div>
+{% endblock mainblock %}

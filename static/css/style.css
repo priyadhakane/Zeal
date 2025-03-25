@@ -275,3 +275,143 @@
     background: var(--dark);
     border-color: var(--primary);
 }
+
+
+h2 {
+    text-align: center;
+    color: #343a40;
+    margin-bottom: 20px;
+}
+
+form {
+    background: #ffffff;
+    padding: 25px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 600px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 10px;
+}
+
+td, th {
+    padding: 12px;
+    text-align: left;
+    border-bottom: 1px solid #dee2e6;
+}
+
+th {
+    background: #007BFF;
+    color: white;
+    padding: 12px;
+    border-radius: 5px 5px 0 0;
+}
+
+input[type="text"],
+input[type="email"],
+textarea {
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px;
+    border: 1px solid #ced4da;
+    border-radius: 5px;
+    font-size: 16px;
+    box-sizing: border-box;
+}
+
+input[type="file"] {
+    padding: 5px;
+    font-size: 16px;
+}
+
+button {
+    background: #28a745;
+    color: white;
+    padding: 12px 18px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background 0.3s;
+    width: 100%;
+}
+
+button:hover {
+    background: #218838;
+}
+
+a {
+    text-decoration: none;
+    color: #dc3545;
+    font-size: 16px;
+}
+
+a:hover {
+    color: #c82333;
+}
+
+tr:last-child td {
+    text-align: center;
+}
+
+tr:last-child td a {
+    display: inline-block;
+    padding: 10px 15px;
+    border: 1px solid #dc3545;
+    border-radius: 5px;
+    color: #dc3545;
+    transition: background 0.3s, color 0.3s;
+}
+
+tr:last-child td a:hover {
+    background: #dc3545;
+    color: white;
+}
+
+/* General page styling */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 0;
+}
+
+/* Main container */
+div {
+    background: white;
+    max-width: 400px;
+    margin: 50px auto;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+/* User info */
+p {
+    font-size: 16px;
+    color: #333;
+    margin: 10px 0;
+}
+
+/* Bold labels */
+p strong {
+    color: #007bff;
+}
+
+/* Profile picture styling */
+img {
+    display: block;
+    margin: 10px auto;
+    border-radius: 50%;
+    border: 3px solid #007bff;
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+}
+
+/* No profile*
